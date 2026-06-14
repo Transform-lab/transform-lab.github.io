@@ -903,7 +903,9 @@
           deinen Platz bestätigen.
         </p>
 
-        <form class="solicitud-form reveal reveal-delay-2" id="solicitudForm" onsubmit="return false;" novalidate>
+        <form class="solicitud-form reveal reveal-delay-2" id="solicitudForm" action="https://formspree.io/f/mzdqyror" method="POST">
+          <input type="hidden" name="_subject" value="Neue Transform·Lab Anfrage">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
           <!-- BLOCK 1: Grunddaten -->
           <fieldset class="form-block">
@@ -918,7 +920,7 @@
               </div>
               <div class="form-group">
                 <label for="f-email">E-Mail</label>
-                <input type="email" id="f-email" name="email" placeholder="deine@email.de" autocomplete="email">
+                <input type="email" id="f-email" name="_replyto" placeholder="deine@email.de" autocomplete="email">
               </div>
             </div>
             <div class="form-row form-row--2">
