@@ -578,52 +578,19 @@ section { padding: 120px 0; }
 }
 
 /* ─────────────────────────────
-   HERO — layout split (texto + escultura)
+   HERO — layout centrado (sin imagen)
 ───────────────────────────── */
 .hero-inner {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: flex-start;
   min-height: calc(100vh - 140px);
   padding-bottom: 0;
 }
 
-@media (min-width: 900px) {
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: flex-end;
-    min-height: calc(100vh - 140px);
-  }
-  .hero-image-col {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    pointer-events: none;
-  }
-}
-
-@media (max-width: 899px) {
-  .hero-image-col { display: none; }
-}
-
-.hero-sculpture {
-  max-height: 72vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-  /* Desvanece la base hacia el fondo negro */
-  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-  /* Ligero scale y fade al cargar */
-  animation: sculptureIn 1.2s cubic-bezier(.4,0,.2,1) both;
-}
-
-@keyframes sculptureIn {
-  from { opacity: 0; transform: translateY(24px) scale(.97); }
-  to   { opacity: 1; transform: none; }
+.hero-text-col {
+  max-width: 720px;
 }
 
 /* ─────────────────────────────
@@ -697,26 +664,44 @@ section { padding: 120px 0; }
 .elige-panel-glow--left  { background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(196,124,74,.12) 0%, transparent 70%); }
 .elige-panel-glow--right { background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(92,143,110,.15) 0%, transparent 70%); }
 
-/* Centro: texto principal */
+/* Centro: imagen + texto encima */
 .elige-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   text-align: center;
-  padding: 80px 40px;
-  width: 360px;
+  padding: 48px 32px;
+  width: 380px;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
-.elige-center::before {
+
+/* Imagen de fondo — recorta el texto español del pie */
+.elige-img-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.elige-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 5%;
+}
+/* Gradiente que oculta el texto en español al pie */
+.elige-img-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 100% 80% at 50% 50%, rgba(8,8,8,.6) 0%, transparent 70%);
-  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(8,8,8,.5) 0%, transparent 30%, transparent 45%, rgba(8,8,8,.92) 78%, var(--black) 100%),
+    linear-gradient(to right, rgba(8,8,8,.7) 0%, transparent 20%, transparent 80%, rgba(8,8,8,.7) 100%);
 }
-.elige-center > * { position: relative; z-index: 1; }
+
+.elige-center > *:not(.elige-img-wrap) { position: relative; z-index: 1; }
 
 .elige-sub {
   font-family: var(--font-body);
@@ -746,8 +731,7 @@ section { padding: 120px 0; }
   }
   .elige-panel { padding: 48px 32px; border: none; border-bottom: 1px solid var(--border); }
   .elige-panel--right { border-left: none; border-bottom: none; }
-  .elige-center { width: 100%; padding: 56px 24px; order: -1; }
-  .elige-center::before { display: none; }
+  .elige-center { width: 100%; min-height: 420px; padding: 56px 24px; order: -1; justify-content: flex-end; }
 }
 
 /* ============================================================
