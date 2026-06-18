@@ -9,12 +9,12 @@
   --black:        #080808;
   --surface:      #111111;
   --surface2:     #181818;
-  --surface3:     #222222;
+  --surface3:     #252525;
   --border:       #2a2a2a;
-  --border-light: #333333;
+  --border-light: #3a3a3a;
   --text:         #f0ede8;
-  --text-muted:   #888880;
-  --text-dim:     #555550;
+  --text-muted:   #9a9992;
+  --text-dim:     #666660;
   --green:        #5c8f6e;
   --green-light:  #7ab08a;
   --green-dim:    #2a4a34;
@@ -229,10 +229,10 @@ section { padding: 120px 0; }
 ───────────────────────────── */
 .numbers-strip {
   padding: 48px 0;
-  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--green-dim); border-bottom: 1px solid var(--green-dim);
   background:
-    radial-gradient(ellipse 60% 100% at 0% 50%, rgba(92,143,110,.06) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 100% at 100% 50%, rgba(201,168,112,.05) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 100% at 0% 50%, rgba(92,143,110,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 100% at 100% 50%, rgba(201,168,112,.08) 0%, transparent 60%),
     var(--surface);
   position: relative;
 }
@@ -252,7 +252,7 @@ section { padding: 120px 0; }
 }
 .number-item .num > span:not(.num-value) { color: var(--green); }
 .number-item .desc {
-  font-size: 12px; letter-spacing: .1em; color: var(--text-dim);
+  font-size: 12px; letter-spacing: .1em; color: var(--text-muted);
   text-transform: uppercase; margin-top: 4px;
 }
 @media (max-width: 600px) {
@@ -338,7 +338,7 @@ section { padding: 120px 0; }
 #pricing::before {
   content: ''; position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
   width: 900px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(201,168,112,.05) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(201,168,112,.12) 0%, transparent 65%);
   pointer-events: none;
 }
 #pricing .pricing-header { text-align: center; margin-bottom: 64px; position: relative; z-index: 1; }
@@ -491,8 +491,8 @@ section { padding: 120px 0; }
 #emotional { text-align: center; background: var(--black); overflow: hidden; position: relative; }
 #emotional::before {
   content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 600px; height: 600px;
-  background: radial-gradient(ellipse at center, rgba(92,143,110,.06) 0%, transparent 70%);
+  width: 700px; height: 700px;
+  background: radial-gradient(ellipse at center, rgba(92,143,110,.14) 0%, transparent 70%);
   pointer-events: none;
 }
 .emotional-grid { display: flex; flex-direction: column; align-items: center; gap: 56px; }
@@ -1351,7 +1351,16 @@ section { padding: 120px 0; }
 .warum-card p { font-size: 14px; line-height: 1.7; }
 
 /* ─── SO FUNKTIONIERT DIE KAUTION ─── */
-#kaution { background: var(--black); }
+#kaution {
+  background: var(--black);
+  position: relative; overflow: hidden;
+}
+#kaution::before {
+  content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse at center, rgba(92,143,110,.10) 0%, transparent 65%);
+  pointer-events: none;
+}
 .kaution-intro {
   max-width: 640px;
   margin: 24px 0 64px;
