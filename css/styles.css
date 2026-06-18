@@ -1554,6 +1554,89 @@ section { padding: 120px 0; }
   margin-top: 8px;
 }
 
+/* ─── ÜBER MICH ─── */
+#ueber-mich { background: var(--surface); }
+.ueber-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .ueber-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+.ueber-img-wrap { position: relative; }
+.ueber-img-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-width: 340px;
+  background: var(--surface2);
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--text-dim);
+}
+.ueber-img-placeholder svg { width: 64px; height: 64px; }
+.ueber-img-placeholder p { font-size: 13px; }
+.ueber-img-wrap img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+.ueber-sub {
+  font-size: 14px;
+  color: var(--green-light);
+  font-weight: 400;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin: 6px 0 32px;
+}
+.ueber-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.ueber-text p { font-size: 15px; line-height: 1.8; }
+.ueber-facts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ueber-facts li {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.ueber-facts li:empty, .ueber-facts li span:last-child:empty { display: none; }
+.uf-icon { color: var(--green); flex-shrink: 0; }
+
+/* ─── FORM CONSENT GROUPS ─── */
+.form-consent-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.form-consent-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 /* ─── FIELD VALIDATION ERROR ─── */
 .field-error {
   border-color: #e05555 !important;
