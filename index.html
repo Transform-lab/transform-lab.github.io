@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&family=Hanken+Grotesk:wght@300;400;500&display=swap"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=26">
+  <link rel="stylesheet" href="css/styles.css?v=27">
 
   <link rel="preload" as="image" href="assets/escultura-transformacion.webp" type="image/webp">
   <link rel="preload" as="image" href="assets/escultura-transformacion-mujer.webp" type="image/webp">
@@ -397,67 +397,64 @@
     <section id="pricing" aria-labelledby="pricing-heading">
       <div class="container">
         <div class="pricing-header reveal">
-          <div class="launch-badge">Einführungsangebot</div>
           <h2 id="pricing-heading">
-            Starte ab 60 €.<br>Bekomme bis zu 199 € zurück, wenn du es schaffst.
+            Erreiche dein Ziel.<br>Bekomme deine Kaution zurück.
           </h2>
-          <p style="margin-top:16px; max-width:500px; margin-left:auto; margin-right:auto;">
-            Die Kaution ist keine verlorene Zahlung. Sie macht dein Commitment verbindlich.
+          <p style="margin-top:16px; max-width:540px; margin-left:auto; margin-right:auto;">
+            Starte mit vollem Commitment und Kaution —
+            <span style="color:var(--text-muted)">oder starte flexibel ohne Kaution.</span>
           </p>
         </div>
 
-        <div class="pricing-card reveal">
-          <div class="pricing-top">
-            <div class="pricing-title-area">
-              <div>
-                <h3>Komplettes Transformationsprogramm</h3>
-                <p style="font-size:13px; margin-top:6px;">
-                  Ernährungsplan + Trainingsplan + Kautionssystem
-                </p>
-              </div>
-              <div class="price-display">
-                <div class="price-was">Realwert 139 €</div>
-                <div class="price-now"><sup>€</sup>60</div>
-                <div class="price-note">Einführungspreis</div>
-              </div>
-            </div>
+        <div class="pricing-compare">
 
-            <dl class="line-items">
-              <div class="line-item">
-                <dt class="li-name">Persönlicher Ernährungsplan</dt>
-                <dd class="li-price">46 €</dd>
-              </div>
-              <div class="line-item">
-                <dt class="li-name">Angepasster Trainingsplan</dt>
-                <dd class="li-price">14 €</dd>
-              </div>
-              <div class="line-item li-fianza">
-                <dt class="li-name">Rückerstattbare Commitment-Kaution</dt>
-                <dd class="li-price">199 €</dd>
-              </div>
-              <div class="line-item li-total">
-                <dt class="li-name">Gesamtbetrag</dt>
-                <dd class="li-price">259 €</dd>
-              </div>
-            </dl>
+          <!-- PLAN OHNE KAUTION -->
+          <div class="pc-card reveal">
+            <div>
+              <div class="pc-label">Ohne Kaution</div>
+              <h3 class="pc-title">Nur Plan</h3>
+              <div class="pc-price">139<span>€</span></div>
+              <div class="pc-price-note">Einmalige Zahlung · Kein Rückgabe-System</div>
+            </div>
+            <ul class="pc-list">
+              <li class="pc-item pc-item--yes">Persönlicher Ernährungsplan</li>
+              <li class="pc-item pc-item--yes">Angepasster Trainingsplan</li>
+              <li class="pc-item pc-item--no">Wöchentliches Check-in</li>
+              <li class="pc-item pc-item--no">Kaution &amp; Rückerstattung</li>
+            </ul>
+            <a href="#form" class="btn-secondary pc-cta" data-plan="nur_plan">Plan anfragen</a>
           </div>
 
-          <div class="pricing-bottom">
-            <div class="recovery-callout">
-              <div class="recovery-icon" aria-hidden="true">↩</div>
-              <p>
-                <strong>Du kannst bis zu 199 € zurückbekommen.</strong> Wenn du
-                alle Ziele erreichst, betragen deine tatsächlichen Kosten nur 60 €.
-                Jede Woche, die du schaffst, bekommst du einen Teil deiner Kaution zurück.
-              </p>
-            </div>
-            <div class="pricing-cta-area">
-              <a href="#form" class="btn-primary">Meinen Platz sichern</a>
-              <p class="pricing-cta-note">
-                Ziele werden vor dem Start definiert · Transparente Bedingungen
-              </p>
-            </div>
+          <!-- IMAGEN CENTRAL -->
+          <div class="pc-image-col" aria-hidden="true">
+            <picture>
+              <source srcset="assets/atleta-hombre.webp" type="image/webp">
+              <img src="assets/atleta-hombre.png" alt="" loading="lazy" class="pc-img">
+            </picture>
           </div>
+
+          <!-- PLAN MIT KAUTION -->
+          <div class="pc-card pc-card--featured reveal reveal-delay-2">
+            <div class="pc-badge-top">Empfohlen</div>
+            <div>
+              <div class="pc-label">Mit Commitment-Kaution</div>
+              <h3 class="pc-title">Komplettpaket</h3>
+              <div class="pc-price">60<span>€</span> <small>+ 199 € Kaution</small></div>
+              <div class="pc-price-note">Effektive Kosten: ab 60 € bei Zielerreichung</div>
+            </div>
+            <ul class="pc-list">
+              <li class="pc-item pc-item--yes">Persönlicher Ernährungsplan</li>
+              <li class="pc-item pc-item--yes">Angepasster Trainingsplan</li>
+              <li class="pc-item pc-item--yes">Wöchentliches Check-in</li>
+              <li class="pc-item pc-item--yes">Anteilige Kautionsrückerstattung</li>
+            </ul>
+            <div class="pc-callout">
+              <strong>Bis zu 199 € zurück</strong>
+              Jede erfüllte Woche bringt dir 25 € zurück. Alle 8 Wochen: volle Rückerstattung.
+            </div>
+            <a href="#form" class="btn-primary pc-cta" data-plan="mit_kaution">Platz sichern</a>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1285,6 +1282,26 @@
           <input type="hidden" name="_next" value="https://www.transform-lab.de/danke.html">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
+          <div class="form-group" style="margin-bottom:24px">
+            <label>Welchen Plan möchtest du anfragen? <span class="form-required">*</span></label>
+            <div class="radio-grid" role="radiogroup" aria-label="Plan">
+              <label class="radio-card radio-card--plan">
+                <input type="radio" name="plan" value="mit_kaution" id="plan-kaution" required>
+                <span class="radio-label">
+                  <strong>Mit Kaution</strong>
+                  <small>60 € + 199 € · Check-in inklusive</small>
+                </span>
+              </label>
+              <label class="radio-card radio-card--plan">
+                <input type="radio" name="plan" value="nur_plan" id="plan-nur">
+                <span class="radio-label">
+                  <strong>Nur Plan</strong>
+                  <small>139 € einmalig · Ohne Kaution</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
           <div class="form-age-notice" role="note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             Dieses Programm richtet sich ausschließlich an Personen ab 18 Jahren.
@@ -1363,10 +1380,10 @@
             </label>
             </div>
 
-            <div class="form-price-summary">
+            <div class="form-price-summary" id="formPriceSummary">
               <div class="fps-row">
-                <span>Programmpreis 60 € + Commitment-Kaution 199 €</span>
-                <strong>Gesamt: 259 €</strong>
+                <span id="fpsLabel">Wähle oben einen Plan aus</span>
+                <strong id="fpsTotal"></strong>
               </div>
               <p class="fps-note">Diese Anfrage verpflichtet dich noch nicht zur Zahlung. Wir prüfen deine Anfrage und bestätigen deinen Platz vor dem Zahlungsschritt.</p>
             </div>
@@ -1446,6 +1463,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=11"></script>
+  <script src="js/main.js?v=12"></script>
 </body>
 </html>

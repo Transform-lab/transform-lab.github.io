@@ -207,6 +207,41 @@
     });
   }
 
+  /* ─── PLAN SELECTOR: pricing CTAs preseleccionan radio + precio dinámico ─── */
+  const planRadios   = document.querySelectorAll('input[name="plan"]');
+  const fpsLabel     = document.getElementById('fpsLabel');
+  const fpsTotal     = document.getElementById('fpsTotal');
+
+  function updatePriceSummary(value) {
+    if (!fpsLabel || !fpsTotal) return;
+    if (value === 'nur_plan') {
+      fpsLabel.textContent = 'Nur Plan — Ernährungs- + Trainingsplan';
+      fpsTotal.textContent = '139 €';
+    } else if (value === 'mit_kaution') {
+      fpsLabel.textContent = 'Komplettpaket — 60 € Programm + 199 € Kaution';
+      fpsTotal.textContent = '259 €';
+    } else {
+      fpsLabel.textContent = 'Wähle oben einen Plan aus';
+      fpsTotal.textContent = '';
+    }
+  }
+
+  planRadios.forEach(radio => {
+    radio.addEventListener('change', () => updatePriceSummary(radio.value));
+  });
+
+  // CTAs de la sección pricing preseleccionan el plan y llevan al form
+  document.querySelectorAll('.pc-cta[data-plan]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const planVal = this.dataset.plan;
+      const radio = document.querySelector(`input[name="plan"][value="${planVal}"]`);
+      if (radio) {
+        radio.checked = true;
+        updatePriceSummary(planVal);
+      }
+    });
+  });
+
   /* ─── FAQ ACORDEÓN ─── */
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
