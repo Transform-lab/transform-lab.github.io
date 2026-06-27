@@ -169,17 +169,15 @@
       /* Validate required checkboxes */
       const saludConsent = form.querySelector('#f-salud-consent');
       const avisoMedico  = form.querySelector('#f-aviso');
-      if (saludConsent && !saludConsent.checked) {
-        saludConsent.closest('.form-checkbox').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        saludConsent.closest('.form-checkbox').style.outline = '2px solid #e05555';
-        setTimeout(() => { saludConsent.closest('.form-checkbox').style.outline = ''; }, 3000);
-        return;
-      }
-      if (avisoMedico && !avisoMedico.checked) {
-        avisoMedico.closest('.form-checkbox').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        avisoMedico.closest('.form-checkbox').style.outline = '2px solid #e05555';
-        setTimeout(() => { avisoMedico.closest('.form-checkbox').style.outline = ''; }, 3000);
-        return;
+      const agbConsent   = form.querySelector('#f-agb');
+      const checkboxesToValidate = [saludConsent, avisoMedico, agbConsent];
+      for (const cb of checkboxesToValidate) {
+        if (cb && !cb.checked) {
+          cb.closest('.form-checkbox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          cb.closest('.form-checkbox').style.outline = '2px solid #e05555';
+          setTimeout(() => { cb.closest('.form-checkbox').style.outline = ''; }, 3000);
+          return;
+        }
       }
 
       btn.disabled = true;
@@ -196,7 +194,7 @@
           window.location.href = stripeUrl;
         } else {
           btn.disabled = false;
-          btn.textContent = (form.querySelector('input[name="plan"]:checked')?.value === 'nur_plan') ? 'Weiter zur Zahlung — 139 €' : 'Platz anfragen';
+          btn.textContent = (form.querySelector('input[name="plan"]:checked')?.value === 'nur_plan') ? 'Kostenpflichtig bestellen — 139 €' : 'Platz anfragen';
           alert('Fehler beim Senden. Bitte versuche es erneut.');
         }
       } catch {
@@ -245,7 +243,7 @@
     if (nextField) nextField.value = isNurplan ? STRIPE_URL_NURPLAN : DANKE_URL;
 
     if (formSubmitBtn) {
-      formSubmitBtn.textContent = isNurplan ? 'Weiter zur Zahlung — 139 €' : 'Platz anfragen';
+      formSubmitBtn.textContent = isNurplan ? 'Kostenpflichtig bestellen — 139 €' : 'Platz anfragen';
     }
 
     if (fpsNote) {
