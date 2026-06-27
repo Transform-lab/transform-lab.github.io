@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=22">
+  <link rel="stylesheet" href="css/styles.css?v=30">
   <style>
     .legal-page { max-width: 760px; margin: 0 auto; padding: 140px 24px 100px; }
     .legal-page h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 48px; }
@@ -83,14 +83,33 @@
       </p>
 
       <h2>§ 3 Leistungsbeschreibung</h2>
-      <p>Transform·Lab ist ein 8-wöchiges Körpertransformationsprogramm, das folgendes umfasst:</p>
+      <p>Transform·Lab bietet zwei Angebotsmodelle an:</p>
+
+      <h3>3.1 Nur Plan (139,00 €)</h3>
+      <p>Einmalige Zahlung. Enthält:</p>
       <ul>
         <li>Persönlicher Ernährungsplan (individuell erstellt)</li>
         <li>Angepasster Trainingsplan (für Fitnessstudio oder Zuhause)</li>
+      </ul>
+      <p>
+        Dieses Modell beinhaltet kein wöchentliches Check-in, kein Tracking durch den Anbieter
+        und kein Commitment-Kautionssystem. Die Zahlung erfolgt direkt und automatisch beim
+        Absenden des Formulars über Stripe.
+      </p>
+
+      <h3>3.2 Mit Kaution — Komplettpaket (259,00 €)</h3>
+      <p>Enthält alle Leistungen des Nur-Plan-Modells sowie zusätzlich:</p>
+      <ul>
         <li>Wöchentliches Fortschritts-Tracking (Gewicht und Körpermaße)</li>
         <li>Laufende Begleitung und Plananpassungen während des Programms</li>
-        <li>Rückerstattbares Commitment-Kautionssystem (siehe § 5)</li>
+        <li>Rückerstattbares Commitment-Kautionssystem in Höhe von 199,00 € (siehe § 5)</li>
       </ul>
+      <p>
+        Bei diesem Modell erfolgt kein automatischer Zahlungsvorgang beim Absenden des Formulars.
+        Der Anbieter prüft die Anfrage individuell und sendet den Zahlungslink nach Bestätigung
+        der Teilnahme per E-Mail.
+      </p>
+
       <p>
         Der Anbieter erbringt diese Leistungen als Einzelperson und nicht als medizinische
         Fachkraft. Das Programm ersetzt keine ärztliche Beratung oder medizinische Behandlung.
@@ -100,21 +119,28 @@
 
       <h2>§ 4 Vertragsschluss und Ablauf</h2>
 
-      <h3>5.1 Anfrage und Überprüfung</h3>
+      <h3>4.1 Nur Plan — automatischer Vertragsschluss</h3>
       <p>
-        Die Anfrage des Teilnehmers über das Online-Formular auf der Website stellt
-        noch kein verbindliches Vertragsangebot dar. Der Anbieter prüft jede Anfrage
-        individuell auf Eignung.
+        Beim Modell „Nur Plan" kommt der Vertrag mit Absenden des Formulars und
+        vollständiger Zahlung von 139,00 € über Stripe zustande. Eine vorherige
+        individuelle Prüfung durch den Anbieter findet nicht statt.
       </p>
 
-      <h3>5.2 Vertragsbestätigung</h3>
+      <h3>4.2 Mit Kaution — Anfrage und Überprüfung</h3>
+      <p>
+        Beim Modell „Mit Kaution" stellt die Anfrage über das Online-Formular noch kein
+        verbindliches Vertragsangebot dar. Der Anbieter prüft jede Anfrage individuell
+        auf Eignung und meldet sich innerhalb von 24 Stunden per E-Mail.
+      </p>
+
+      <h3>4.3 Vertragsbestätigung (nur Mit Kaution)</h3>
       <p>
         Der Vertrag kommt erst zustande, wenn der Anbieter die Teilnahme schriftlich
-        per E-Mail bestätigt und der Teilnehmer die Zahlung von 259 € (60 € Programmpreis
-        + 199 € Commitment-Kaution) vollständig geleistet hat.
+        per E-Mail bestätigt und der Teilnehmer die Zahlung von 259,00 € (60,00 €
+        Programmpreis + 199,00 € Commitment-Kaution) vollständig geleistet hat.
       </p>
 
-      <h3>5.3 Programmstart</h3>
+      <h3>4.4 Programmstart</h3>
       <p>
         Nach Zahlungseingang werden der persönliche Ernährungs- und Trainingsplan
         innerhalb von 5 Werktagen an den Teilnehmer übermittelt. Das Programm
@@ -124,6 +150,8 @@
       <hr class="legal-divider">
 
       <h2>§ 5 Commitment-Kaution und Rückerstattungssystem</h2>
+
+      <p><em>Dieser Paragraph gilt ausschließlich für das Modell „Mit Kaution" (§ 3.2). Beim Modell „Nur Plan" entfällt die Kaution vollständig.</em></p>
 
       <h3>5.1 Zweck der Kaution</h3>
       <p>
@@ -208,21 +236,34 @@
       <hr class="legal-divider">
 
       <h2>§ 6 Preise und Zahlungsbedingungen</h2>
+
+      <h3>6.1 Nur Plan</h3>
+      <p>
+        Der Gesamtbetrag beträgt <strong>139,00 €</strong> (einmalige Zahlung, nicht
+        rückerstattbar außer im Rahmen des gesetzlichen Widerrufsrechts).
+        Die Zahlung erfolgt automatisch beim Absenden des Formulars über Stripe.
+      </p>
+
+      <h3>6.2 Mit Kaution — Komplettpaket</h3>
       <p>
         Der Gesamtbetrag bei Vertragsschluss beträgt <strong>259,00 €</strong>,
         zusammengesetzt aus:
       </p>
       <ul>
         <li>60,00 € Programmpreis (nicht rückerstattbar, außer im Rahmen des gesetzlichen Widerrufsrechts)</li>
-        <li>199,00 € Commitment-Kaution (rückerstattbar gemäß § 4)</li>
+        <li>199,00 € Commitment-Kaution (rückerstattbar gemäß § 5)</li>
       </ul>
       <p>
-        Die Zahlung erfolgt einmalig und vollständig vor Programmstart über den
-        Zahlungsdienstleister Stripe. Ratenzahlungen sind nicht möglich.
+        Die Zahlung erfolgt nach schriftlicher Bestätigung durch den Anbieter über
+        einen individuell zugesandten Stripe-Zahlungslink.
       </p>
+
+      <h3>6.3 Allgemeines</h3>
       <p>
-        Alle Preise sind Endpreise. Als Kleinunternehmer gemäß § 19 UStG wird
-        keine Umsatzsteuer berechnet und ausgewiesen.
+        Alle Zahlungen erfolgen einmalig und vollständig vor Programmstart.
+        Ratenzahlungen sind nicht möglich. Alle Preise sind Endpreise.
+        Als Kleinunternehmer gemäß § 19 UStG wird keine Umsatzsteuer berechnet
+        und ausgewiesen.
       </p>
 
       <hr class="legal-divider">
