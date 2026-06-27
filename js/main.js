@@ -234,7 +234,7 @@
   /* ─── PLAN SELECTOR: pricing CTAs preseleccionan radio + precio dinámico ─── */
 
   // ⚠️ STRIPE: pega aquí el link de pago de Stripe para el plan de 139 €
-  const STRIPE_URL_NURPLAN = 'https://buy.stripe.com/bJedR9e1l73E7lc3Q2fnO02';
+  const STRIPE_URL_NURPLAN = 'https://buy.stripe.com/bJedR9e1l73E7lc3Q2fnO02?locale=de';
   const DANKE_URL = 'https://www.transform-lab.de/danke.html';
 
   const planRadios    = document.querySelectorAll('input[name="plan"]');
