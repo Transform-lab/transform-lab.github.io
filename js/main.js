@@ -215,6 +215,7 @@
   const fpsLabel      = document.getElementById('fpsLabel');
   const fpsTotal      = document.getElementById('fpsTotal');
   const fpsNote       = document.getElementById('fpsNote');
+  const formIntro     = document.getElementById('formIntro');
   const formSubmitBtn = document.getElementById('formSubmitBtn');
   const nurplanFields = document.getElementById('nurplan-fields');
   const fMensajeWrap  = document.getElementById('f-mensaje-wrap');
@@ -250,6 +251,12 @@
       fpsNote.textContent = isNurplan
         ? 'Nach dem Absenden wirst du direkt zur sicheren Zahlung (Stripe) weitergeleitet.'
         : 'Diese Anfrage verpflichtet dich noch nicht zur Zahlung. Wir prüfen deine Anfrage und bestätigen deinen Platz vor dem Zahlungsschritt.';
+    }
+
+    if (formIntro) {
+      formIntro.textContent = isNurplan
+        ? 'Füll das Formular aus und wir erstellen deinen Plan. Die Zahlung erfolgt direkt im nächsten Schritt.'
+        : 'Kein langer Fragebogen. Wir melden uns innerhalb von 24 Stunden. Die Details klären wir persönlich vor dem Start.';
     }
   }
 
