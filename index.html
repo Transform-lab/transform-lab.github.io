@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&family=Hanken+Grotesk:wght@300;400;500&display=swap"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=31">
+  <link rel="stylesheet" href="css/styles.css?v=32">
 
   <link rel="preload" as="image" href="assets/escultura-transformacion.webp" type="image/webp">
   <link rel="preload" as="image" href="assets/escultura-transformacion-mujer.webp" type="image/webp">
@@ -626,8 +626,9 @@
     <!-- WAS ENTHALTEN IST -->
     <section id="includes" aria-labelledby="includes-heading">
       <div class="container">
-        <span class="label label-line reveal">Was enthalten ist</span>
-        <h2 id="includes-heading" class="reveal">Alles, was du brauchst, um es zu schaffen.</h2>
+        <span class="label label-line reveal">Was in der Challenge enthalten ist</span>
+        <h2 id="includes-heading" class="reveal">Was in der Challenge enthalten ist.</h2>
+        <p class="includes-note reveal reveal-delay-1">Der Nur Plan für 139 € enthält Ernährungsplan, Trainingsplan und Start-Empfehlungen — ohne wöchentliches Check-in.</p>
 
         <ul class="includes-grid" style="list-style:none">
           <li class="include-card reveal">
@@ -913,55 +914,43 @@
       </div>
     </section>
 
-    <!-- ERGEBNISSE / TESTIMONIALS -->
+    <!-- BETA / ERGEBNISSE -->
     <section id="ergebnisse" aria-labelledby="ergebnisse-heading">
       <div class="container">
-        <span class="label label-line reveal">Ergebnisse</span>
+        <span class="label label-line reveal">Erste Runde</span>
         <h2 id="ergebnisse-heading" class="reveal" style="text-align:center">
-          Die erste Runde läuft.<br>Sei von Anfang an dabei.
+          Die erste Runde läuft.<br>Die ersten echten Ergebnisse entstehen gerade.
         </h2>
         <p class="ergebnisse-intro reveal reveal-delay-1">
-          Transform·Lab ist neu — und das ist dein Vorteil. Wer jetzt startet,
-          bekommt vollen persönlichen Zugang, den Einführungspreis
-          und ist Teil der ersten Ergebnisse.
+          Transform·Lab startet mit einer begrenzten Anzahl an Teilnehmern.
+          Ergebnisse und Erfahrungen werden nur veröffentlicht, wenn sie real sind
+          und ausdrücklich freigegeben wurden.
         </p>
 
         <div class="ergebnisse-grid">
 
           <div class="ergebnis-card reveal">
-            <div class="ec-stars" aria-hidden="true">★★★★★</div>
-            <div class="ec-result">−5 kg</div>
+            <div class="ec-result" style="font-size:2rem">Beta-Phase</div>
             <p class="ec-quote">
-              "Ich habe viele Programme ausprobiert. Dieses ist das erste, bei dem
-              ich nicht nach zwei Wochen aufgehört habe — weil ich nicht aufhören
-              <em>wollte</em>, wenn ich Geld zurückbekomme."
+              Wir begleiten die ersten Teilnehmer bewusst persönlich
+              und dokumentieren den Prozess sauber.
             </p>
-            <div class="ec-meta">
-              <span class="ec-name">M. T., 34 · Komplettpaket</span>
-              <span class="ec-detail">8 Wochen · Ziel: −5 kg</span>
-              <span class="ec-refund">199 € vollständig zurückbekommen</span>
-            </div>
           </div>
 
           <div class="ergebnis-card reveal reveal-delay-1">
-            <div class="ec-stars" aria-hidden="true">★★★★★</div>
-            <div class="ec-result">−3,5 kg</div>
+            <div class="ec-result" style="font-size:1.4rem">Echte Ergebnisse<br>statt leere Versprechen</div>
             <p class="ec-quote">
-              "Der Plan war realistisch — kein Hunger, kein Extremsport. Und das
-              wöchentliche Check-in hat mir geholfen, nicht zu schummeln.
-              Ich wusste: jemand schaut hin."
+              Keine erfundenen Vorher-Nachher-Geschichten.
+              Nur reale Erfahrungen mit ausdrücklicher Zustimmung.
             </p>
-            <div class="ec-meta">
-              <span class="ec-name">S. K., 29 · Komplettpaket</span>
-              <span class="ec-detail">8 Wochen · Ziel: −4 kg</span>
-              <span class="ec-refund">112 € zurückbekommen</span>
-            </div>
           </div>
 
-          <div class="ergebnis-card ergebnis-card--placeholder reveal reveal-delay-2">
-            <div class="ep-icon" aria-hidden="true">⏳</div>
-            <p class="ep-text">Hier erscheint dein Ergebnis.</p>
-            <p class="ep-sub">Die nächsten Plätze sind noch offen.</p>
+          <div class="ergebnis-card reveal reveal-delay-2">
+            <div class="ec-result" style="font-size:1.4rem">Dein Ergebnis<br>kann hier stehen</div>
+            <p class="ec-quote">
+              Wenn du Teil der ersten Runde wirst, kannst du einer der ersten
+              dokumentierten Fälle von Transform·Lab sein.
+            </p>
           </div>
 
         </div>
@@ -1135,16 +1124,29 @@
           </div>
 
           <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9">
-              Was ist genau im Plan enthalten?
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9a">
+              Was ist im Nur Plan enthalten?
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer" id="faq-answer-9" role="region">
+            <div class="faq-answer" id="faq-answer-9a" role="region">
               <div class="faq-answer-inner">
-                Enthalten sind: persönlicher Ernährungsplan, angepasster
-                Trainingsplan, wöchentliches Tracking, Fortschrittskontrolle
-                mit Gewicht und Maßen, Anpassungen nach Entwicklung,
-                kontinuierliche Begleitung und das rückerstattbare Kautionssystem.
+                Der Nur Plan enthält deinen persönlichen Ernährungsplan, einen angepassten
+                Trainingsplan und Start-Empfehlungen. Er enthält kein wöchentliches Check-in,
+                keine Kaution und keine Rückerstattung.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9b">
+              Was ist in der Challenge enthalten?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-9b" role="region">
+              <div class="faq-answer-inner">
+                Die Challenge enthält Ernährungsplan, Trainingsplan, wöchentliches Check-in,
+                Fortschrittskontrolle, persönliche Begleitung und das rückerstattbare
+                Kautionssystem.
               </div>
             </div>
           </div>
@@ -1646,8 +1648,8 @@
           </h2>
           <p class="reveal reveal-delay-1">
             Jede Woche ohne Struktur ist eine weitere Woche im selben Kreislauf.
-            Tritt der Challenge bei, erreiche deine Ziele und bekomme
-            deine Investition zurück. Klare Struktur. Messbarer Fortschritt. Echte Veränderung.
+            Tritt der Challenge bei, erreiche deine vereinbarten Ziele und bekomme
+            deine Kaution zurück. Klare Struktur. Messbarer Fortschritt. Echte Veränderung.
           </p>
           <div class="final-cta-buttons reveal reveal-delay-2">
             <a href="#form" class="btn-primary" style="font-size:16px;padding:18px 44px">
