@@ -197,17 +197,11 @@ section { padding: 120px 0; }
   .hero-wipe-line       { display: none; }
 }
 @media (max-width: 768px) {
-  .hero-wipe-img--woman { animation: wipeRevealV 8s ease-in-out infinite; }
-  .hero-wipe-line {
-    width: 100%; height: 3px; top: 100%; left: 0; bottom: auto;
-    transform: translateY(-50%);
-    background: linear-gradient(to right, transparent 0%, rgba(255,255,255,.9) 20%, rgba(255,255,255,.9) 80%, transparent 100%);
-    animation: wipeLineV 8s ease-in-out infinite;
-  }
+  .hero-wipe-img--woman { animation: heroFadeMobile 8s ease-in-out infinite; clip-path: none; }
+  .hero-wipe-line { display: none; }
 }
 @media (max-width: 768px) and (prefers-reduced-motion: reduce) {
-  .hero-wipe-img--woman { animation: none; clip-path: inset(50% 0 0 0); }
-  .hero-wipe-line       { display: none; }
+  .hero-wipe-img--woman { animation: none; opacity: .5; }
 }
 .hero-content { position: relative; z-index: 1; }
 
@@ -1031,6 +1025,14 @@ section { padding: 120px 0; }
   90%  { left: 2%;   opacity: 1; }
   92%  { left: 0%;   opacity: 0; }
   100% { left: 0%;   opacity: 0; }
+}
+@keyframes heroFadeMobile {
+  0%   { opacity: 0; }
+  8%   { opacity: 0; }
+  42%  { opacity: 1; }
+  58%  { opacity: 1; }
+  92%  { opacity: 0; }
+  100% { opacity: 0; }
 }
 @keyframes wipeRevealV {
   0%   { clip-path: inset(100% 0 0 0); }
