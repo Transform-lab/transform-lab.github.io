@@ -120,6 +120,22 @@
     }, { passive: true });
   }
 
+  /* ─── HERO CROSS-FADE MÓVIL (JS, fiable en iOS) ─── */
+  if (window.innerWidth <= 768 && !reduceMotion) {
+    const womanImg = document.querySelector('.hero-wipe-img--woman');
+    if (womanImg) {
+      function showWoman() {
+        womanImg.classList.add('hero-woman-visible');
+        setTimeout(hideWoman, 4000);
+      }
+      function hideWoman() {
+        womanImg.classList.remove('hero-woman-visible');
+        setTimeout(showWoman, 4000);
+      }
+      setTimeout(showWoman, 1000);
+    }
+  }
+
   /* ─── CURSOR GLOW (solo desktop) ─── */
   const glow = document.getElementById('cursorGlow');
   if (glow && window.matchMedia('(pointer: fine)').matches) {

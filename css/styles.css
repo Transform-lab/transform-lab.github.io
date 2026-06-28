@@ -197,11 +197,14 @@ section { padding: 120px 0; }
   .hero-wipe-line       { display: none; }
 }
 @media (max-width: 768px) {
-  .hero-wipe-img--woman { animation: heroSlideUpMobile 8s ease-in-out infinite; clip-path: none; }
+  .hero-wipe-img--woman {
+    animation: none;
+    clip-path: none;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .hero-wipe-img--woman.hero-woman-visible { opacity: 1; }
   .hero-wipe-line { display: none; }
-}
-@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
-  .hero-wipe-img--woman { animation: none; opacity: .5; }
 }
 .hero-content { position: relative; z-index: 1; }
 
