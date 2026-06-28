@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zahlung bestätigt — Transform·Lab</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=26">
+  <style>
+    .danke-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+    }
+    .danke-inner {
+      max-width: 600px;
+      text-align: center;
+    }
+    .danke-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--green-dim);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 36px;
+      border: 1px solid var(--green);
+    }
+    .danke-icon svg { width: 32px; height: 32px; color: var(--green-light); }
+    .danke-inner h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+    .danke-inner .lead {
+      font-size: 16px; line-height: 1.8;
+      color: var(--text-muted); margin-bottom: 40px;
+    }
+    .danke-inner .lead strong { color: var(--text); }
+    .next-steps {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .ns-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ns-header h3 {
+      font-size: 1rem; font-family: var(--font-display);
+      color: var(--text); margin: 0;
+    }
+    .ns-step {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ns-step:last-child { border-bottom: none; }
+    .ns-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--green-dim); border: 1px solid var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 500; color: var(--green-light);
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .ns-content strong { display: block; font-size: 14px; color: var(--text); margin-bottom: 3px; }
+    .ns-content p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    .danke-contact {
+      font-size: 13px; color: var(--text-dim); margin-bottom: 28px;
+    }
+    .danke-contact a { color: var(--green-light); text-decoration: none; }
+    .danke-cta { display: inline-block; }
+    .payment-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-dim); border: 1px solid var(--green);
+      color: var(--green-light); border-radius: 100px;
+      font-size: 13px; font-weight: 500; padding: 6px 16px;
+      margin-bottom: 28px;
+    }
+    .payment-badge svg { width: 14px; height: 14px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav scrolled" aria-label="Navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">Transform<span>·</span>Lab</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="danke-page">
+      <div class="danke-inner">
+
+        <div class="danke-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+
+        <span class="payment-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+          Zahlung erfolgreich — 139 €
+        </span>
+
+        <h1>Dein Plan ist in Arbeit.</h1>
+
+        <p class="lead">
+          Deine Zahlung ist eingegangen — danke.<br>
+          Wir erstellen jetzt deinen persönlichen Ernährungs- und Trainingsplan
+          und schicken ihn dir <strong>innerhalb von 24–48 Stunden</strong> per E-Mail.
+        </p>
+
+        <div class="next-steps">
+          <div class="ns-header">
+            <h3>Was jetzt passiert</h3>
+          </div>
+          <div class="ns-step">
+            <div class="ns-num">1</div>
+            <div class="ns-content">
+              <strong>Wir prüfen deine Angaben</strong>
+              <p>Gabriel und Ionel analysieren dein Profil, dein Ziel und deinen Ausgangspunkt.</p>
+            </div>
+          </div>
+          <div class="ns-step">
+            <div class="ns-num">2</div>
+            <div class="ns-content">
+              <strong>Dein Plan wird erstellt</strong>
+              <p>Du erhältst einen individuellen Ernährungs- und Trainingsplan — kein generisches Template.</p>
+            </div>
+          </div>
+          <div class="ns-step">
+            <div class="ns-num">3</div>
+            <div class="ns-content">
+              <strong>Plan per E-Mail zugeschickt</strong>
+              <p>Innerhalb von 24–48 Stunden landet dein Plan in deinem Postfach. Bitte auch den Spam-Ordner prüfen.</p>
+            </div>
+          </div>
+          <div class="ns-step">
+            <div class="ns-num">4</div>
+            <div class="ns-content">
+              <strong>Du startest</strong>
+              <p>Lies den Plan komplett durch und fang am nächsten Tag an. Bei Fragen — einfach antworten.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="danke-contact">
+          Fragen oder keine E-Mail erhalten?<br>
+          <a href="mailto:hallo@transform-lab.de">hallo@transform-lab.de</a>
+        </p>
+
+        <a href="index.html" class="btn-secondary danke-cta">← Zurück zur Startseite</a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo" style="font-size:12px;letter-spacing:.15em">Transform<span>·</span>Lab</a>
+      <p>© 2026 Transform·Lab ·
+        <a href="impressum.html" style="color:var(--text-muted)">Impressum</a> ·
+        <a href="datenschutz.html" style="color:var(--text-muted)">Datenschutz</a> ·
+        <a href="agb.html" style="color:var(--text-muted)">AGB</a> ·
+        <a href="widerruf.html" style="color:var(--text-muted)">Widerruf</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
