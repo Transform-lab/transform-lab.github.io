@@ -233,6 +233,16 @@
         });
 
         if (res.ok) {
+          const formData = new FormData(form);
+          const payload = {};
+          formData.forEach((v, k) => { payload[k] = v; });
+          try {
+            await fetch('https://hook.eu1.make.com/5i4ktv2j7jdmwwyp6ycbfpbagyng1flp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+          } catch (e) {}
           window.location.href = stripeUrl;
         } else {
           btn.disabled = false;
