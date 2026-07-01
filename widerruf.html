@@ -149,25 +149,57 @@
       </p>
 
       <div class="widerruf-formular">
-        <h3>Muster-Widerrufsformular</h3>
-        <p>An:</p>
-        <p>
-          Gabriel Palosi<br>
-          Heidenfelderstr. 12, 97209 Veitshochheim<br>
-          E-Mail: hallo@transform-lab.de
-        </p>
-        <p style="margin-top:20px;">
-          Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag
-          über den Kauf der folgenden Waren (*)/die Erbringung der folgenden
-          Dienstleistung (*):
-        </p>
-        <div class="wf-field">Bestellt am (*) / erhalten am (*):</div>
-        <div class="wf-field">Name des/der Verbraucher(s):</div>
-        <div class="wf-field">Anschrift des/der Verbraucher(s):</div>
-        <div class="wf-field">E-Mail-Adresse:</div>
-        <div class="wf-field">Datum:</div>
-        <div class="wf-field">Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier):</div>
-        <p style="font-size:12px; margin-top:16px; color:var(--text-dim);">(*) Unzutreffendes streichen.</p>
+        <h3>Widerrufsformular online ausfüllen</h3>
+        <p>Füllen Sie das Formular aus und klicken Sie auf „Widerruf absenden". Wir bestätigen den Eingang per E-Mail.</p>
+
+        <form action="https://formspree.io/f/mzdqyror" method="POST" style="margin-top:24px;">
+          <input type="hidden" name="_subject" value="Widerruf – Transform·Lab">
+          <input type="hidden" name="_next" value="https://www.transform-lab.de/widerruf.html?widerruf=ok">
+          <input type="hidden" name="typ" value="Widerruf">
+
+          <div style="margin-bottom:16px;">
+            <label style="display:block;font-size:13px;color:var(--text-muted);margin-bottom:6px;">Ihr vollständiger Name *</label>
+            <input type="text" name="name" required style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;">
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label style="display:block;font-size:13px;color:var(--text-muted);margin-bottom:6px;">E-Mail-Adresse *</label>
+            <input type="email" name="_replyto" required style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;">
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label style="display:block;font-size:13px;color:var(--text-muted);margin-bottom:6px;">Gebuchtes Produkt *</label>
+            <select name="produkt" required style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;">
+              <option value="">– bitte wählen –</option>
+              <option value="Nur Plan (139 €)">Nur Plan (139 €)</option>
+              <option value="Challenge mit Kaution (259 €)">Challenge mit Kaution (259 €)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label style="display:block;font-size:13px;color:var(--text-muted);margin-bottom:6px;">Bestelldatum (Datum der Zahlungsbestätigung) *</label>
+            <input type="date" name="bestelldatum" required style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;">
+          </div>
+
+          <div style="margin-bottom:24px;">
+            <label style="display:block;font-size:13px;color:var(--text-muted);margin-bottom:6px;">Anmerkungen (optional)</label>
+            <textarea name="anmerkungen" rows="3" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text);font-size:14px;font-family:inherit;resize:vertical;"></textarea>
+          </div>
+
+          <button type="submit" style="background:var(--green);color:#fff;border:none;border-radius:6px;padding:12px 28px;font-size:14px;font-weight:500;cursor:pointer;width:100%;font-family:inherit;">
+            Widerruf absenden
+          </button>
+        </form>
+
+        <script>
+          (function(){
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('widerruf') === 'ok'){
+              var f = document.querySelector('.widerruf-formular form');
+              if(f){ f.innerHTML = '<p style="color:var(--green-light);font-size:15px;padding:16px 0;">✓ Ihr Widerruf wurde erfolgreich übermittelt. Wir bestätigen den Eingang per E-Mail.</p>'; }
+            }
+          })();
+        </script>
       </div>
 
       <hr class="legal-divider">
