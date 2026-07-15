@@ -578,11 +578,14 @@
       try {
         const data = {};
         new FormData(form).forEach((v, k) => { data[k] = v; });
-        await fetch(WEBHOOK, {
+        const res = await fetch(WEBHOOK, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
+        // fetch() only rejects on network errors — a non-OK HTTP status (e.g. an
+        // inactive scenario) must not show a false success. Surface it as an error.
+        if (!res.ok) throw new Error('Webhook responded ' + res.status);
         form.style.display = 'none';
         document.getElementById('akSuccess').style.display = 'block';
       } catch {

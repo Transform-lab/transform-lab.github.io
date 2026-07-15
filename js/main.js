@@ -235,11 +235,16 @@
           ? 'https://hook.eu1.make.com/3wnfjy64go8desrcct79oxrdk1xbbeji'
           : 'https://hook.eu1.make.com/5i4ktv2j7jdmwwyp6ycbfpbagyng1flp';
 
-        await fetch(webhookUrl, {
+        const res = await fetch(webhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
+        /* Only forward to Stripe once the lead actually reached Make/Airtable.
+           fetch() only rejects on network errors, so an HTTP error (e.g. an
+           inactive scenario) would otherwise send the user to pay with no
+           record on our side. Treat a non-OK status as a failure. */
+        if (!res.ok) throw new Error('Webhook responded ' + res.status);
 
         window.location.href = stripeUrl;
       } catch {
@@ -306,6 +311,21 @@
       });
       const trainingstage = nurplanFields.querySelector('[name="trainingstage"]');
       if (trainingstage) { isNurplan ? trainingstage.setAttribute('required', '') : trainingstage.removeAttribute('required'); }
+    }
+
+    /* Keep the conditional "schwanger" field consistent with the current mode.
+       Otherwise it can stay `required` while hidden — which silently blocks the
+       submit as a non-focusable control — or stay hidden when a female applicant
+       switches back to Nur Plan. Re-derive it from the current mode + geschlecht. */
+    const schwangerWrapEl  = document.getElementById('schwanger-wrap');
+    const schwangerFieldEl = document.getElementById('schwanger-nein');
+    const isWeiblich = document.querySelector('input[name="geschlecht"]:checked')?.value === 'weiblich';
+    const showSchwanger = isNurplan && isWeiblich;
+    if (schwangerWrapEl)  schwangerWrapEl.hidden = !showSchwanger;
+    if (schwangerFieldEl) {
+      showSchwanger
+        ? schwangerFieldEl.setAttribute('required', '')
+        : schwangerFieldEl.removeAttribute('required');
     }
 
     if (nextField) nextField.value = isNurplan ? STRIPE_URL_NURPLAN : DANKE_URL;
