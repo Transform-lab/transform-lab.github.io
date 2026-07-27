@@ -120,6 +120,15 @@
       margin-top: 10px; font-size: 12.5px; color: var(--text-dim); letter-spacing: .03em;
     }
     .hero-price-total strong { color: var(--text-muted); font-weight: 500; }
+
+    /* "199 €" im Hero groß und in Gold hervorheben */
+    .hero-euro {
+      color: var(--gold);
+      font-size: 1.35em;
+      font-weight: 500;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -161,7 +170,7 @@
 
 
             <h1 id="hero-heading" class="hero-title">
-              Wir bezahlen dich<br>fürs Abnehmen.
+              Hol dir bis zu<br><span class="hero-euro">199&nbsp;€</span> zurück.
             </h1>
 
             <p class="hero-sub">
@@ -1544,7 +1553,10 @@
                 <span class="checkbox-label">
                   Ich willige ausdrücklich ein, dass Transform·Lab meine gesundheitsbezogenen Angaben
                   (u. a. Gewicht, Verletzungen, Erkrankungen, Medikamente) gemäß Art. 9 Abs. 2 lit. a DSGVO
-                  ausschließlich zur Erstellung und Begleitung meines persönlichen Plans verarbeitet.
+                  ausschließlich zur Erstellung und Begleitung meines persönlichen Plans verarbeitet —
+                  auch mithilfe KI-gestützter Dienste (u. a. OpenAI), wobei die Verarbeitung teilweise
+                  außerhalb der EU (u. a. USA) auf Grundlage geeigneter Garantien erfolgt. Einzelheiten
+                  in der <a href="datenschutz.html" target="_blank" style="color:var(--green-light)">Datenschutzerklärung</a>.
                   Diese Einwilligung kann ich jederzeit mit Wirkung für die Zukunft widerrufen.
                 </span>
               </label>
