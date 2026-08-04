@@ -5,6 +5,31 @@
 (function () {
   'use strict';
 
+  /* ─── ATTRIBUTION: captura UTM + click-ids, persiste entre páginas (first-touch) ─── */
+  (function captureAttribution() {
+    const KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'ttclid'];
+    const STORE = 'tl_attribution';
+    let data = {};
+    try { data = JSON.parse(sessionStorage.getItem(STORE) || '{}'); } catch (e) { data = {}; }
+    const params = new URLSearchParams(window.location.search);
+    KEYS.forEach(function (k) {
+      const v = params.get(k);
+      if (v && !data[k]) data[k] = v;                 // primer toque: no sobrescribir
+    });
+    if (!data.landing_page) data.landing_page = window.location.pathname + window.location.search;
+    if (!data.referrer && document.referrer && document.referrer.indexOf(window.location.host) === -1) {
+      data.referrer = document.referrer;              // solo referrer externo
+    }
+    try { sessionStorage.setItem(STORE, JSON.stringify(data)); } catch (e) {}
+    const form = document.getElementById('solicitudForm');
+    if (form) {
+      Object.keys(data).forEach(function (k) {
+        const input = form.querySelector('input[name="' + k + '"]');
+        if (input) input.value = data[k] || '';
+      });
+    }
+  })();
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ─── NAV: clase .scrolled al hacer scroll ─── */
