@@ -7,7 +7,7 @@
   <!-- Meta Pixel (Base) + Cookie-Consent -->
   <script src="js/meta-pixel.js?v=3"></script>
   <script src="js/tiktok-pixel.js?v=1"></script>
-  <script src="js/consent.js?v=2"></script>
+  <script src="js/consent.js?v=3"></script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <title>Datenschutzerklärung — Transform·Lab</title>
   <meta name="robots" content="noindex, follow">
@@ -28,9 +28,8 @@
     .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 13px; text-decoration: none; margin-bottom: 48px; transition: color .2s; }
     .back-link:hover { color: var(--text); }
   </style>
-  <!-- Privacy-friendly analytics by Plausible -->
-  <script async src="https://plausible.io/js/pa-rchwNeHP1BfyQp6xnn5ss.js"></script>
-  <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+  <!-- Cloudflare Web Analytics (cookieless, ohne Einwilligung) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9d70b01f3729443aaf6a1abe3623daff"}'></script>
 </head>
 <body>
 
@@ -154,11 +153,12 @@
         Cloudflare. Beide können dabei technische Zugriffsdaten (z. B. IP-Adressen) verarbeiten.
       </p>
 
-      <h3>Plausible Analytics (Reichweitenmessung)</h3>
+      <h3>Cloudflare Web Analytics (Reichweitenmessung)</h3>
       <p>
-        Zur anonymen Reichweitenmessung nutzen wir Plausible Analytics. Plausible arbeitet ohne Cookies
-        und ohne Erhebung personenbezogener Daten. Weitere Informationen:
-        <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">plausible.io/data-policy</a>
+        Zur anonymen Reichweitenmessung nutzen wir Cloudflare Web Analytics. Dieser Dienst arbeitet ohne
+        Cookies, ohne Fingerprinting und ohne Erhebung personenbezogener Daten; es wird kein
+        seitenübergreifendes Profil erstellt. Weitere Informationen:
+        <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">cloudflare.com/web-analytics</a>
       </p>
 
       <p>
@@ -212,8 +212,8 @@
 
       <h2>8. Cookies und Reichweitenmessung</h2>
       <p>
-        Diese Website verwendet keine eigenen Tracking-Cookies. Die Reichweitenmessung über Plausible
-        erfolgt cookielos und ohne personenbezogene Daten. Der Meta-Pixel (Facebook/Instagram) sowie der
+        Diese Website verwendet keine eigenen Tracking-Cookies. Die Reichweitenmessung über Cloudflare
+        Web Analytics erfolgt cookielos und ohne personenbezogene Daten. Der Meta-Pixel (Facebook/Instagram) sowie der
         TikTok-Pixel werden ausschließlich nach Ihrer Einwilligung über den Cookie-Banner geladen und dienen
         Marketingzwecken; ohne Einwilligung werden sie nicht aktiviert. Technisch notwendige Cookies können durch eingebundene
         Drittanbieter (Stripe, Cloudflare) gesetzt werden.

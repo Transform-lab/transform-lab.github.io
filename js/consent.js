@@ -2,7 +2,7 @@
  * Transform·Lab — Cookie-Consent (Marketing)
  * ------------------------------------------------------------
  * Technische Consent-Verwaltung nach DSGVO. Notwendige Cookies
- * und Plausible (cookieless) laufen immer; MARKETING (Meta Pixel,
+ * und Cloudflare Web Analytics (cookieless) laufen immer; MARKETING (Meta Pixel,
  * TikTok Pixel) nur nach ausdrücklicher Zustimmung.
  *
  * - Zeigt das Banner nur, wenn noch keine Entscheidung vorliegt.
